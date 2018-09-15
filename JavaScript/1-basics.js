@@ -1,18 +1,28 @@
 'use strict';
 
+// Constants
+
 const SALUTATION = 'Ave';
 
 const COLORS = [
-  'black', 'red', 'green', 'yellow',
-  'blue', 'magenta', 'cyan', 'white'
+  /* 1 */ 'black',
+  /* 2 */ 'red',
+  /* 3 */ 'green',
+  /* 4 */ 'yellow',
+  /* 5 */ 'blue',
+  /* 6 */ 'magenta',
+  /* 7 */ 'cyan',
+  /* 8 */ 'white'
 ];
+
+// Functions
 
 const colorer = (s, color) => `\x1b[3${color}m${s}\x1b[0m`;
 
 const colorize = name => {
+  let res = '';
   const letters = name.split('');
   let color = 1;
-  let res = '';
   for (const letter of letters) {
     res += colorer(letter, color++);
     if (color > COLORS.length) color = 1;
@@ -25,6 +35,8 @@ const greetings = name => (
     `${SALUTATION}, ${colorize(name)}!` :
     `Hello, ${name}!`
 );
+
+// Usage
 
 const fullName = 'Marcus Aurelius Antoninus Augustus';
 console.log(greetings(fullName));
