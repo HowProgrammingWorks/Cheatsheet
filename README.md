@@ -1,2 +1,1 @@
-# Cheatsheet
-Language Cheatsheet
+# Language Cheatsheet
