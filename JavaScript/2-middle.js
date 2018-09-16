@@ -1,18 +1,22 @@
 'use strict';
 
-const adder = initial => ({
+const adder = (initial = 0) => ({
   value: initial,
+  steps: [initial],
   add(value) {
+    this.steps.push(value);
     this.value += value;
     return this;
   }
 });
 
 const Adder = class {
-  constructor(initial) {
+  constructor(initial = 0) {
+    this.steps = [initial];
     this.value = initial;
   }
   add(value) {
+    this.steps.push(value);
     this.value += value;
     return this;
   }
@@ -21,11 +25,15 @@ const Adder = class {
 // Usage
 
 {
-  const v = new Adder(3).add(-9).add(12);
-  console.log(v);
+  const { value, steps } = new Adder(5).add(-8).add(11);
+  console.log(value);
+  const [a, b, c] = steps;
+  console.log(a, b, c);
 }
 
 {
-  const v = adder(3).add(-9).add(12);
-  console.log(v);
+  const { value, steps } = adder(5).add(-8).add(11);
+  console.log(value);
+  const [a, b, c] = steps;
+  console.log(a, b, c);
 }

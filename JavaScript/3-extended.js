@@ -26,3 +26,5 @@ const PointEx = serializable(movable(Point));
 const point1 = new PointEx(10, 20);
 point1.move(5, -2);
 console.log(point1.toString());
+const { x, y } = point1;
+console.log(x, y);
