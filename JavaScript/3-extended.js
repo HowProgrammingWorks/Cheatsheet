@@ -1,34 +1,28 @@
 'use strict';
 
-const listener = Parent => class extends Parent {
-  constructor() {
-    super();
-    this.events = {};
-  }
-  on(name, listener) {
-    const event = this.events[name];
-    if (event) event.push(listener);
-    else this.events[name] = [listener];
-  }
-  emit(name, ...data) {
-    const event = this.events[name];
-    if (!event) return;
-    event.forEach(fn => fn(...data));
+const Point = class {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
   }
 };
 
-const adder = Parent => class extends Parent {
-  constructor(initial) {
-    super();
-    this.value = initial;
-  }
-  add(value) {
-    this.value += value;
-    return this;
+const serializable = Category => class extends Category {
+  toString() {
+    return `[${this.x}, ${this.y}]`;
   }
 };
 
-console.dir({
-  listener,
-  adder
-});
+const movable = Category => class extends Category {
+  move(x, y) {
+    this.x += x;
+    this.y += y;
+  }
+};
+
+// Usage
+
+const PointEx = serializable(movable(Point));
+const point1 = new PointEx(10, 20);
+point1.move(5, -2);
+console.log(point1.toString());
