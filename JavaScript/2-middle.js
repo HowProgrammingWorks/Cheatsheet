@@ -25,14 +25,14 @@ const Adder = class {
 // Usage
 
 {
-  const { value, steps } = new Adder(5).add(-8).add(11);
+  const { value, steps } = adder(5).add(-8).add(11);
   console.log(value);
   const [a, b, c] = steps;
   console.log(a, b, c);
 }
 
 {
-  const { value, steps } = adder(5).add(-8).add(11);
+  const { value, steps } = new Adder(5).add(-8).add(11);
   console.log(value);
   const [a, b, c] = steps;
   console.log(a, b, c);
