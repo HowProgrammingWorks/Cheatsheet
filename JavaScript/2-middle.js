@@ -15,6 +15,7 @@ const Adder = class {
     this.steps = [initial];
     this.value = initial;
   }
+
   add(value) {
     this.steps.push(value);
     this.value += value;
