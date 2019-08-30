@@ -1,6 +1,6 @@
-# Упражнения
+# Exercises
 
-## Идентификаторы
+## Identifiers
 
 1. Define variable to store your name as a string.
 2. Define constant to store your birth year as a number.
@@ -9,12 +9,12 @@
 5. Call function passing variable.
 6. Call function passing constant.
 
-## Циклы
+## Loop
 
 1. Print all odd numbers from the range [15, 30] including endpoints.
 2. Implement function `range(start: number, end: number)` doing the same task.
 
-## Функции
+## Function
 
 1. Implement function `average` with signature
 `average(a: number, b: number): number` calculating average (arithmetic mean).
@@ -25,7 +25,7 @@
 4. Call functions `square` and `cube` in loop, then pass their results to
 function `average`. Print what `average` returns.
 
-## Объекты
+## Object
 
 1. Define constant object with single field `name`.
 2. Define variable object with single field `name`.
@@ -36,7 +36,7 @@ Explain script behaviour.
 `createUser('Marcus Aurelius', 'Roma')` will return object
 `{ name: 'Marcus Aurelius', city: 'Roma' }`
 
-## Массивы
+## Array
 
 1. Define array of objects with two fields: `name` and `phone` (phone book).
 Example: `{ name: 'Marcus Aurelius', phone: '+380445554433' }`.
@@ -44,7 +44,7 @@ Example: `{ name: 'Marcus Aurelius', phone: '+380445554433' }`.
 `findPhoneByName(name: string): string`. Returning phone from that object
 where field `name` equals argument `name`. Use `for` loop for this search.
 
-## Коллекции: хеш-таблицы
+## Hash
 
 1. Define hash with `key` contains `name` (from previous example) and `value`
 contains `phone`.
