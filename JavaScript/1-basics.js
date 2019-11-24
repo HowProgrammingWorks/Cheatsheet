@@ -5,14 +5,14 @@
 const SALUTATION = 'Ave';
 
 const COLORS = [
-  /* 1 */ 'black',
-  /* 2 */ 'red',
-  /* 3 */ 'green',
-  /* 4 */ 'yellow',
-  /* 5 */ 'blue',
-  /* 6 */ 'magenta',
-  /* 7 */ 'cyan',
-  /* 8 */ 'white'
+  /* 0 */ 'black',
+  /* 1 */ 'red',
+  /* 2 */ 'green',
+  /* 3 */ 'yellow',
+  /* 4 */ 'blue',
+  /* 5 */ 'magenta',
+  /* 6 */ 'cyan',
+  /* 7 */ 'white'
 ];
 
 // Functions
@@ -22,10 +22,10 @@ const colorer = (s, color) => `\x1b[3${color}m${s}\x1b[0m`;
 const colorize = name => {
   let res = '';
   const letters = name.split('');
-  let color = 1;
+  let color = 0;
   for (const letter of letters) {
     res += colorer(letter, color++);
-    if (color > COLORS.length) color = 1;
+    if (color > COLORS.length) color = 0;
   }
   return res;
 };
