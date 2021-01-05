@@ -19,7 +19,7 @@ const COLORS = [
 
 const colorer = (s, color) => `\x1b[3${color}m${s}\x1b[0m`;
 
-const colorize = name => {
+const colorize = (name) => {
   let res = '';
   const letters = name.split('');
   let color = 0;
@@ -30,7 +30,7 @@ const colorize = name => {
   return res;
 };
 
-const greetings = name => (
+const greetings = (name) => (
   name.includes('Augustus') ?
     `${SALUTATION}, ${colorize(name)}!` :
     `Hello, ${name}!`
