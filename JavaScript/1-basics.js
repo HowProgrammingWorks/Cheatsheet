@@ -12,7 +12,7 @@ const COLORS = [
   /* 4 */ 'blue',
   /* 5 */ 'magenta',
   /* 6 */ 'cyan',
-  /* 7 */ 'white'
+  /* 7 */ 'white',
 ];
 
 // Functions
@@ -30,11 +30,10 @@ const colorize = (name) => {
   return res;
 };
 
-const greetings = (name) => (
-  name.includes('Augustus') ?
-    `${SALUTATION}, ${colorize(name)}!` :
-    `Hello, ${name}!`
-);
+const greetings = (name) =>
+  name.includes('Augustus')
+    ? `${SALUTATION}, ${colorize(name)}!`
+    : `Hello, ${name}!`;
 
 // Usage
 

@@ -7,7 +7,7 @@ const adder = (initial = 0) => ({
     this.steps.push(value);
     this.value += value;
     return this;
-  }
+  },
 });
 
 const Adder = class {
